@@ -1,1 +1,133 @@
+# For Masters Tournament and the ship-weight rules:
+#
+#	1. Move this file to somewhere in `res_mods/gui/unbound2`. Preferably `.../unbound2/PnFMods/`
+#
+#	2. Remove `#` from the following `MOD_TOURNAMENT_SHIPWEIGHT_DATA` constant and edit it.
+#		- Format:
+#           {
+#               SHIP_ID:str : { WEIGHT:number, FLAGSHIP:bool },
+#               ...,
+#           }
+#
+#		- `SHIP_ID` field can be retrieved from gameparams. Single-quotation must be used for the ship IDs, not the double.
+#		- `WEIGHT` field is mandatory. However, if there is no such a field, the weight for the ship is considered to be 0.
+#		- `FLAGSHIP` field is optional. It will be false by default unless specified.
+#
+#		- Do not forget the comma at the end of each line.
+#		- Indents do not matter. But I recommend you insert 4 spaces or 1 tab in front of each entry for the sake of readablity.
+#
+#	3. Done! You don't have to edit anything further and the values should appear in the game.
 
+
+# (def constant MOD_TOURNAMENT_SHIPWEIGHT_DATA {
+# 	'4179572720': {WEIGHT: 300,	FLAGSHIP: true},
+# 	'3760075984': {WEIGHT: 12,	FLAGSHIP: false},
+# 	'4178458320': {WEIGHT: 100},
+# 	'4074158064': {WEIGHT: 30},
+# 	'4074682192': {WEIGHT: 160,	FLAGSHIP: true},
+# 	'4277090288': {WEIGHT: 160,	FLAGSHIP: true},
+# })
+
+(def constant MOD_TOURNAMENT_SHIPWEIGHT_DATA {
+    '4178523600': {WEIGHT:  28, FLAGSHIP: false}, # Admiral Ushakov          , PRSB111
+    '4074681808': {WEIGHT:  24, FLAGSHIP: false}, # Alexander Nevsky         , PRSC210
+    '3760076208': {WEIGHT:  13, FLAGSHIP: false}, # Álvaro de Bazán          , PSSD510
+    '4178491376': {WEIGHT:  24, FLAGSHIP:  true}, # Annapolis                , PASC111
+    '3560912592': {WEIGHT:  19, FLAGSHIP: false}, # ARP Yamato               , PJSB700
+    '4179506928': {WEIGHT:  10, FLAGSHIP: false}, # Attilio Regolo           , PISD110
+    '3445536752': {WEIGHT:   7, FLAGSHIP: false}, # Austin                   , PASC810
+    '3760142160': {WEIGHT:  21, FLAGSHIP: false}, # Bourgogne                , PFSB510
+    '3760108912': {WEIGHT:  22, FLAGSHIP: false}, # Brisbane                 , PUSC510
+    '4074714832': {WEIGHT:  19, FLAGSHIP: false}, # Bungo                    , PJSB210
+    '4179539376': {WEIGHT:  11, FLAGSHIP: false}, # Castilla                 , PSSC110
+    '4178491184': {WEIGHT:  14, FLAGSHIP: false}, # Clausewitz               , PGSC111
+    '3760109392': {WEIGHT:   7, FLAGSHIP: false}, # Colbert                  , PFSC510
+    '4178491216': {WEIGHT:  24, FLAGSHIP:  true}, # Condé                    , PFSC111
+    '4179572688': {WEIGHT:  18, FLAGSHIP: false}, # Conqueror                , PBSB110
+    '4179572464': {WEIGHT:  19, FLAGSHIP: false}, # Cristoforo Colombo       , PISB110
+    '4178457904': {WEIGHT:  13, FLAGSHIP: false}, # Dalarna                  , PWSD111
+    '4179507152': {WEIGHT:  16, FLAGSHIP: false}, # Daring                   , PBSD110
+    '3445536720': {WEIGHT:  13, FLAGSHIP: false}, # Defence                  , PBSC810
+    '3864933840': {WEIGHT:  12, FLAGSHIP: false}, # Delny                    , PRSD410
+    '4273911792': {WEIGHT:  22, FLAGSHIP: false}, # Des Moines               , PASC020
+    '4178524112': {WEIGHT:  23, FLAGSHIP: false}, # Devastation              , PBSB111
+    '3760076752': {WEIGHT:  12, FLAGSHIP: false}, # Druid                    , PBSD510
+    '4178491344': {WEIGHT:  21, FLAGSHIP: false}, # Edgar                    , PBSC111
+    '4074649392': {WEIGHT:  12, FLAGSHIP: false}, # Elbing                   , PGSD210
+    '3655219184': {WEIGHT:  18, FLAGSHIP: false}, # Forrest Sherman          , PASD610
+    '4074648880': {WEIGHT:  23, FLAGSHIP: false}, # Gdańsk                   , PWSD210
+    '4281219056': {WEIGHT:  20, FLAGSHIP: false}, # Gearing                  , PASD013
+    '3655251920': {WEIGHT:  10, FLAGSHIP: false}, # Gibraltar                , PBSC610
+    '4074682320': {WEIGHT:  10, FLAGSHIP: false}, # Goliath                  , PBSC210
+    '4179539728': {WEIGHT:  12, FLAGSHIP: false}, # Gouden Leeuw             , PHSC110
+    '4179572528': {WEIGHT:  18, FLAGSHIP: false}, # Grosser Kurfürst         , PGSB110
+    '4074649040': {WEIGHT:  13, FLAGSHIP: false}, # Grozovoi                 , PRSD210
+    '4179506480': {WEIGHT:  12, FLAGSHIP: false}, # Halland                  , PWSD110
+    '4178523952': {WEIGHT:  25, FLAGSHIP: false}, # Hannover                 , PGSB111
+    '4074649296': {WEIGHT:  20, FLAGSHIP: false}, # Harugumo                 , PJSD210
+    '3760076496': {WEIGHT:  13, FLAGSHIP: false}, # Hayate                   , PJSD510
+    '4179539792': {WEIGHT:  13, FLAGSHIP: false}, # Henri IV                 , PFSC110
+    '4179539760': {WEIGHT:  10, FLAGSHIP: false}, # Hindenburg               , PGSC110
+    '3655284688': {WEIGHT:  19, FLAGSHIP: false}, # Incomparable             , PBSB610
+    '4179539152': {WEIGHT:   7, FLAGSHIP: false}, # Jinan                    , PZSC110
+    '4178458608': {WEIGHT:  21, FLAGSHIP: false}, # Joshua Humphreys         , PASD111
+    '4179506640': {WEIGHT:  13, FLAGSHIP: false}, # Khabarovsk               , PRSD110
+    '3655251664': {WEIGHT:  12, FLAGSHIP: false}, # Kitakami                 , PJSC610
+    '4179507024': {WEIGHT:  20, FLAGSHIP: false}, # Kléber                   , PFSD110
+    '3445503824': {WEIGHT:  20, FLAGSHIP: false}, # Kléber CLR               , PFSD810
+    '4179572176': {WEIGHT:  25, FLAGSHIP: false}, # Kremlin                  , PRSB110
+    '4178457808': {WEIGHT:  18, FLAGSHIP: false}, # Kunming                  , PZSD111
+    '4074715120': {WEIGHT:  28, FLAGSHIP: false}, # Louisiana                , PASB210
+    '3760075984': {WEIGHT:  13, FLAGSHIP: false}, # Lüshun                   , PZSD510
+    '4074649424': {WEIGHT:  21, FLAGSHIP: false}, # Marceau                  , PFSD210
+    '4074682192': {WEIGHT:  22, FLAGSHIP: false}, # Marseille                , PFSC210
+    '3655284528': {WEIGHT:  17, FLAGSHIP: false}, # Mecklenburg              , PGSB610
+    '4179539920': {WEIGHT:  19, FLAGSHIP: false}, # Minotaur                 , PBSC110
+    '4277090288': {WEIGHT:  20, FLAGSHIP: false}, # Montana                  , PASB017
+    '4179539408': {WEIGHT:  24, FLAGSHIP: false}, # Moskva                   , PRSC110
+    '3760109296': {WEIGHT:  22, FLAGSHIP:  true}, # Napoli                   , PISC510
+    '3676223216': {WEIGHT:  22, FLAGSHIP:  true}, # Napoli B                 , PISC590
+    '4178490832': {WEIGHT:  24, FLAGSHIP:  true}, # Novosibirsk              , PRSC111
+    '3760142320': {WEIGHT:  20, FLAGSHIP: false}, # Ohio                     , PASB510
+    '4178523984': {WEIGHT:  25, FLAGSHIP:  true}, # Patrie                   , PFSB111
+    '3969824208': {WEIGHT:  23, FLAGSHIP:  true}, # Petropavlovsk            , PRSC310
+    '4178491120': {WEIGHT:  21, FLAGSHIP: false}, # Piemonte                 , PISC111
+    '3760109520': {WEIGHT:  15, FLAGSHIP: false}, # Plymouth                 , PBSC510
+    '3969857328': {WEIGHT:  20, FLAGSHIP: false}, # Preussen                 , PGSB310
+    '3655251952': {WEIGHT:  18, FLAGSHIP: false}, # Puerto Rico              , PASC610
+    '3550360880': {WEIGHT:  21, FLAGSHIP: false}, # Ragnar                   , PWSD710
+    '4179572560': {WEIGHT:  19, FLAGSHIP: false}, # République               , PFSB110
+    '3539941360': {WEIGHT:  21, FLAGSHIP: false}, # Rhode Island             , PASB720
+    '3760142064': {WEIGHT:  21, FLAGSHIP: false}, # Ruggiero di Lauria       , PISB510
+    '3550394352': {WEIGHT:  19, FLAGSHIP: false}, # Salem                    , PASC710
+    '4179539280': {WEIGHT:  19, FLAGSHIP: false}, # San Martín               , PVSC110
+    '4178523856': {WEIGHT:  25, FLAGSHIP: false}, # Satsuma                  , PJSB111
+    '4074714928': {WEIGHT:  23, FLAGSHIP: false}, # Schlieffen               , PGSB210
+    '3550393808': {WEIGHT:  13, FLAGSHIP: false}, # Sevastopol               , PRSC710
+    '3760142032': {WEIGHT:  19, FLAGSHIP: false}, # Shikishima               , PJSB510
+    '4282267344': {WEIGHT:  16, FLAGSHIP: false}, # Shimakaze                , PJSD012
+    '3550426864': {WEIGHT:  17, FLAGSHIP: false}, # Sicilia                  , PISB710
+    '3760141776': {WEIGHT:  15, FLAGSHIP: false}, # Slava                    , PRSB510
+    '3655218480': {WEIGHT:  21, FLAGSHIP: false}, # Småland                  , PWSD610
+    '3655251408': {WEIGHT:  13, FLAGSHIP: false}, # Smolensk                 , PRSC610
+    '3739137488': {WEIGHT:  13, FLAGSHIP: false}, # Smolensk B               , PRSC530
+    '3760076784': {WEIGHT:  20, FLAGSHIP: false}, # Somers                   , PASD510
+    '4074715088': {WEIGHT:  24, FLAGSHIP: false}, # St. Vincent              , PBSB210
+    '3760109008': {WEIGHT:  22, FLAGSHIP: false}, # Stalingrad               , PRSC510
+    '3760142288': {WEIGHT:  20, FLAGSHIP: false}, # Thunderer                , PBSB510
+    '3655218960': {WEIGHT:  12, FLAGSHIP: false}, # Tromp                    , PHSD610
+    '3760076144': {WEIGHT:  16, FLAGSHIP: false}, # Vampire II               , PUSD510
+    '4179539696': {WEIGHT:  13, FLAGSHIP: false}, # Venezia                  , PISC110
+    '4179572720': {WEIGHT:  21, FLAGSHIP:  true}, # Vermont                  , PASB110
+    '4074682352': {WEIGHT:  16, FLAGSHIP: false}, # Worcester                , PASC210
+    '4178458320': {WEIGHT:  18, FLAGSHIP: false}, # Yamagiri                 , PJSD111
+    '4276041424': {WEIGHT:  19, FLAGSHIP: false}, # Yamato                   , PJSB018
+    '4074682064': {WEIGHT:   9, FLAGSHIP: false}, # Yodo                     , PJSC210
+    '3749623504': {WEIGHT:   9, FLAGSHIP: false}, # Yoshino                  , PJSC520
+    '3676223184': {WEIGHT:   9, FLAGSHIP: false}, # Yoshino B                , PJSC590
+    '4179506384': {WEIGHT:  16, FLAGSHIP: false}, # Yueyang                  , PZSD110
+    '3655218992': {WEIGHT:  13, FLAGSHIP: false}, # Z-42                     , PGSD610
+    '4179506992': {WEIGHT:  12, FLAGSHIP: false}, # Z-52                     , PGSD110
+    '4259231440': {WEIGHT:  10, FLAGSHIP: false}, # Zaō                      , PJSC034
+    '4178458064': {WEIGHT:  18, FLAGSHIP:  true}, # Zorkiy                   , PRSD111
+)
