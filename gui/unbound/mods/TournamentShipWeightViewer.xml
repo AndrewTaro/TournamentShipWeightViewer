@@ -1,0 +1,400 @@
+﻿<ui>
+	<block className="RoomMainInset">
+		<style>
+			<height value="440px"/>
+			<flow value="horizontal"/>
+		</style>
+		<bind name="firstEntityDH" value="'trainingRoomEntity'; CC.trainingRoomWindowState"/>
+		<bind name="watchDH" value="'observersAvailable'; ['trainingRoomEntity.trainingRoom.evUpdate']; trainingRoomEntity.trainingRoom.observersAvailable"/>
+		<bind name="var" value="{windowAppearLag: 0.2}"/>
+		<!--mod-->
+		<bind name="dispatch" value="'evShipWeightChanged'; 'evRecalcAllTeamShipWeights'; {}; 1"/>
+		<!--mod-->
+		<bind name="stageSize"/>
+		<block>
+			<bind name="appear" value="'addedToStage'; 0.15; windowAppearLag + 0 * 0.075; {alpha: 0, top: 10}; {alpha: 1, top: 0}; SC.Common.EASING_FUNCTIONS.OUT_QUAD"/>
+			<bind name="appear" value="'startHide'; 0.15; 0 * 0.055; {alpha: 1, top: 0}; {alpha: 0, top: -10}; SC.Common.EASING_FUNCTIONS.IN_QUAD"/>
+			<style>
+				<height value="100%"/>
+				<marginRight value="1280:0,1920:48aw"/>
+				<width value="280px"/>
+			</style>
+			<bind name="instance" value="'TrainingRoomInfo'; {}"/>
+		</block>
+		<block>
+			<bind name="appear" value="'addedToStage'; 0.15; windowAppearLag + 0 * 0.075; {alpha: 0, top: 10}; {alpha: 1, top: 0}; SC.Common.EASING_FUNCTIONS.OUT_QUAD"/>
+			<bind name="appear" value="'startHide'; 0.15; 0 * 0.055; {alpha: 1, top: 0}; {alpha: 0, top: -10}; SC.Common.EASING_FUNCTIONS.IN_QUAD"/>
+			<bind name="visible" value="stageWidth == 1280"/>
+			<style>
+				<width value="3px"/>
+				<height value="100%"/>
+			</style>
+			<block className="VerticalDivider">
+				<style>
+					<height value="100%"/>
+					<width value="3px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_v.png"/>
+				</style>
+			</block>
+		</block>
+		<block>
+			<bind name="appear" value="'addedToStage'; 0.15; windowAppearLag + 1 * 0.075; {alpha: 0, top: 10}; {alpha: 1, top: 0}; SC.Common.EASING_FUNCTIONS.OUT_QUAD"/>
+			<bind name="appear" value="'startHide'; 0.15; 1 * 0.055; {alpha: 1, top: 0}; {alpha: 0, top: -10}; SC.Common.EASING_FUNCTIONS.IN_QUAD"/>
+			<style>
+				<height value="100%"/>
+				<width value="1280:340,1920:340aw"/>
+			</style>
+			<bind name="instance" value="'TeamMainElement'; {_teamId: SC.Common.TRAINING_ROOM_TEAMS_IDS.SELF_TEAM}"/>
+		</block>
+		<block>
+			<bind name="appear" value="'addedToStage'; 0.15; windowAppearLag + 1 * 0.075; {alpha: 0, top: 10}; {alpha: 1, top: 0}; SC.Common.EASING_FUNCTIONS.OUT_QUAD"/>
+			<bind name="appear" value="'startHide'; 0.15; 1 * 0.055; {alpha: 1, top: 0}; {alpha: 0, top: -10}; SC.Common.EASING_FUNCTIONS.IN_QUAD"/>
+			<style>
+				<width value="3px"/>
+				<height value="100%"/>
+			</style>
+			<block className="VerticalDivider">
+				<style>
+					<height value="100%"/>
+					<width value="3px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_v.png"/>
+				</style>
+			</block>
+		</block>
+		<block>
+			<bind name="appear" value="'addedToStage'; 0.15; windowAppearLag + 2 * 0.075; {alpha: 0, top: 10}; {alpha: 1, top: 0}; SC.Common.EASING_FUNCTIONS.OUT_QUAD"/>
+			<bind name="appear" value="'startHide'; 0.15; 2 * 0.055; {alpha: 1, top: 0}; {alpha: 0, top: -10}; SC.Common.EASING_FUNCTIONS.IN_QUAD"/>
+			<style>
+				<height value="100%"/>
+				<width value="1280:300,1920:340aw"/>
+			</style>
+			<block>
+				<styleClass value="$Fullsize"/>
+				<bind name="instance" value="'TeamMainElement'; {_teamId: SC.Common.TRAINING_ROOM_TEAMS_IDS.NEUTRAL_TEAM}"/>
+			</block>
+			<block>
+				<style>
+					<width value="100%"/>
+				</style>
+				<bind name="instance" value="'TeamMainElement'; observersAvailable ? {_teamId: SC.Common.TRAINING_ROOM_TEAMS_IDS.OBSERVER_TEAM} : null"/>
+			</block>
+		</block>
+		<block>
+			<bind name="appear" value="'addedToStage'; 0.15; windowAppearLag + 2 * 0.075; {alpha: 0, top: 10}; {alpha: 1, top: 0}; SC.Common.EASING_FUNCTIONS.OUT_QUAD"/>
+			<bind name="appear" value="'startHide'; 0.15; 2 * 0.055; {alpha: 1, top: 0}; {alpha: 0, top: -10}; SC.Common.EASING_FUNCTIONS.IN_QUAD"/>
+			<style>
+				<width value="3px"/>
+				<height value="100%"/>
+			</style>
+			<block className="VerticalDivider">
+				<style>
+					<height value="100%"/>
+					<width value="3px"/>
+					<backgroundSize value="fill"/>
+					<backgroundImage value="url:../service_kit/dividers/divider_v.png"/>
+				</style>
+			</block>
+		</block>
+		<block>
+			<bind name="appear" value="'addedToStage'; 0.15; windowAppearLag + 3 * 0.075; {alpha: 0, top: 10}; {alpha: 1, top: 0}; SC.Common.EASING_FUNCTIONS.OUT_QUAD"/>
+			<bind name="appear" value="'startHide'; 0.15; 3 * 0.055; {alpha: 1, top: 0}; {alpha: 0, top: -10}; SC.Common.EASING_FUNCTIONS.IN_QUAD"/>
+			<style>
+				<height value="100%"/>
+				<width value="1280:340,1920:340aw"/>
+			</style>
+			<bind name="instance" value="'TeamMainElement'; {_teamId: SC.Common.TRAINING_ROOM_TEAMS_IDS.OTHER_TEAM}"/>
+		</block>
+	</block>
+
+	<block className="TeamMainElement">
+		<bind name="firstEntityDH" value="'trainingRoomEntity'; CC.trainingRoomWindowState"/>
+		<bind name="watchDH" value="'windowState'; ['trainingRoomEntity.trainingRoomWindowState.evUpdate']; trainingRoomEntity.trainingRoomWindowState.state"/>
+		<bind name="watchDH" value="'notReadyWindowState'; ['trainingRoomEntity.trainingRoomWindowState.evUpdate']; trainingRoomEntity.trainingRoomWindowState.notReadyWindowState"/>
+		<bind name="watchDH" value="'windowInset'; ['trainingRoomEntity.trainingRoomWindowState.evUpdate']; trainingRoomEntity.trainingRoomWindowState.inset"/>
+		<bind name="watchDH" value="'windowInsetLabel'; ['trainingRoomEntity.trainingRoomWindowState.evUpdate']; trainingRoomEntity.trainingRoomWindowState.insetLabel"/>
+		<bind name="firstEntityDH" value="'selfPlayerEntity'; CC.accountSelf"/>
+		<bind name="watchDH" value="'selfPreBattleId'; ['selfPlayerEntity.preBattlePlayerSimple.evPreBattleIdChanged']; selfPlayerEntity.preBattlePlayerSimple.preBattleId"/>
+		<bind name="watchDH" value="'selfTeamId'; ['selfPlayerEntity.preBattlePlayerSimple.evTeamIdChanged']; selfPlayerEntity.preBattlePlayerSimple.teamId"/>
+		<bind name="watchDH" value="'isSelfPlayerOwner'; ['selfPlayerEntity.preBattlePlayerSimple.evIsCommanderChanged']; selfPlayerEntity.preBattlePlayerSimple.isCommander"/>
+		<bind name="watchDH" value="'isSelfPlayerCommander'; ['selfPlayerEntity.trainingRoomPlayer.evUpdate']; selfPlayerEntity.trainingRoomPlayer.isCommander &amp;&amp; selfTeamId == _teamId"/>
+		<bind name="watchDH" value="'isBotsEnabled'; ['trainingRoomEntity.trainingRoom.evUpdate']; trainingRoomEntity.trainingRoom.isBotsEnabled"/>
+		<bind name="watch" value="'isSpectatorsTeam'; _teamId == SC.Common.TRAINING_ROOM_TEAMS_IDS.OBSERVER_TEAM"/>
+		<bind name="watch" value="'isTeamManagementAvailable'; 	(isSelfPlayerOwner || isSelfPlayerCommander) &amp;&amp; 
+												(windowState == 'created') &amp;&amp; 
+												(_teamId != SC.Common.TRAINING_ROOM_TEAMS_IDS.NEUTRAL_TEAM) &amp;&amp;
+												!isSpectatorsTeam &amp;&amp;
+												(isBotsEnabled)"/>
+		<!--mod-->
+		<bind name="var" value="{teamShipWeights : 0, currentShipWeight: 0}"/>
+		<bind name="catch" value="'evRecalcAllTeamShipWeights'; {teamShipWeights: 0}"/>
+		<bind name="catch" value="'evSendShipWeights'; null; 'evRecalcTeamShipWeights'"/>
+		<bind name="catch" value="'evRecalcTeamShipWeights'; {teamShipWeights: teamShipWeights + currentShipWeight}"/>
+		<!--mod-->
+		<style>
+			<backgroundColor value="0x40000000"/>
+			<width value="100%"/>
+		</style>
+		<bind name="style" value="'height'; isSpectatorsTeam ? '162px' : '100%'"/>
+		<block>
+			<style>
+				<width value="100%"/>
+				<height value="30px"/>
+				<backgroundImage value="url:../service_kit/panel_backgrounds/pbs/grey.png"/>
+				<background9Slice value="[2]"/>
+			</style>
+			<block>
+				<styleClass value="$MiddleAligned"/>
+				<block className="button_dock" type="native">
+					<styleClass value="$FullsizeAbsolute"/>
+					<params>
+						<param name="soundSet" value="dropdown"/>
+					</params>
+					<bind name="selected" value="fillBotsInfotipInfotipIsVisible"/>
+					<bind name="tooltip" value="'FillBotsInfotip'; isTeamManagementAvailable ? {_teamId: _teamId} : null; TooltipBehaviour.verticalInfotip; null; 'fillBotsInfotipInfotipIsVisible'"/>
+					<bind name="enabled" value="isTeamManagementAvailable"/>
+				</block>
+				<block>
+					<style>
+						<marginTop value="8px"/>
+						<marginLeft value="8px"/>
+						<marginRight value="4px"/>
+						<marginBottom value="8px"/>
+						<hitTest value="false"/>
+					</style>
+					<block>
+						<bind name="name" value="'TeamHeader_' + _teamId"/>
+						<style>
+							<marginRight value="4px"/>
+						</style>
+						<bind name="instance" value="'FormationHeader'; {_isTrainingRoom: true, _isSpectatorsTeam: isSpectatorsTeam, _teamId: _teamId}"/>
+					</block>
+					<!--mod-->
+					<block type="text">
+						<styleClass value="$TextDefaultBold17NM"/>
+						<bind name="class" value="colorClass"/>
+						<style>
+							<marginTop value="1px"/>
+							<marginLeft value="10px"/>
+							<textAlign value="right"/>
+						</style>
+						<bind name="text" value="teamShipWeights"/>
+					</block>
+					<!--mod-->
+					<block className="icon_navigate" type="native">
+						<bind name="visible" value="isTeamManagementAvailable"/>
+						<bind name="gotoAndStop!" value="'down'"/>
+					</block>
+					<style>
+						<flow value="horizontal"/>
+					</style>
+				</block>
+			</block>
+		</block>
+		<block>
+			<bind name="visible" value="!isSpectatorsTeam"/>
+			<style>
+				<width value="100%"/>
+				<height value="30px"/>
+				<backgroundImage value="url:../service_kit/panel_backgrounds/pbs/alphablack.png"/>
+				<background9Slice value="[2]"/>
+			</style>
+			<block>
+				<style>
+					<marginTop value="8px"/>
+				</style>
+				<styleClass value="$MiddleAligned"/>
+				<bind name="watch" value="'notDistributedTeam'; _teamId == SC.Common.TRAINING_ROOM_TEAMS_IDS.NEUTRAL_TEAM"/>
+				<bind name="instance" value="'FormationShipClassesStatus'; !isSpectatorsTeam &amp;&amp; !notDistributedTeam ? {_preBattleId: selfPreBattleId, _teamId: _teamId} : null"/>
+			</block>
+		</block>
+		<block>
+			<styleClass value="$Fullsize"/>
+			<bind name="instance" value="'FormationMainElement'; {	_isTrainingRoom: true, _teamId: _teamId, 
+													_formationPlayerClass: 'TrainingRoomPlayerItem'}"/>
+		</block>
+	</block>
+
+	<block className="TrainingRoomPlayerItemDraggableOrNot">
+		<style>
+			<width value="100%"/>
+			<height value="80px"/>
+		</style>
+		<bind name="entityDH" value="'entityAccount'; _entityAccountId"/>
+		<bind name="watch" value="'elementName'; _isDragEnabled ? 'TrainingRoomPlayerItemDraggable_' + _entityAccountId : 'TrainingRoomPlayerItemNonDraggable_' + _entityAccountId"/>
+		<bind name="name" value="elementName"/>
+		<bind name="watch" value="'isBot'; entityAccount.bot != undefined"/>
+		<bind name="watch" value="'dropTypePostfix'; isBot ? '_bot' : ''"/>
+		<bind name="draggable" value="_isDragEnabled ? 'this': null; entityAccount.preBattlePlayerSimple.teamId + dropTypePostfix; {playerId: entityAccount.preBattlePlayerSimple.id, isBot: isBot}"/>
+		<block className="FormationPlayerItem">
+			<bind name="controller" value="'lesta.unbound.controls.UbInteractiveController'"/>
+			<bind name="dataRefDH" value="'itemAccountEntity'; '$dataRef.ref'"/>
+			<bind name="entityDH" value="'entityAccount'; _entityAccountId ? _entityAccountId : itemAccountEntity.id"/>
+			<bind name="watch" value="'isSelfPlayer'; entityAccount.accountSimple.isSelfPlayer"/>
+			<bind name="watchDH" value="'isSuspended'; ['entityAccount.accountSimple.evSuspendedChanged']; entityAccount.accountSimple.suspended"/>
+			<bind name="watch" value="'isBot'; entityAccount.bot != undefined"/>
+			<bind name="firstEntityDH" value="'chatEntity'; CC.chat"/>
+			<bind name="watchDH" value="'isChatServerAvailable'; ['chatEntity.chat.evConnected', 'chatEntity.chat.evDisConnected']; chatEntity.chat.isConnected"/>
+			<bind name="watchDH" value="'shipId'; ['entityAccount.preBattlePlayerSimple.evShipIdChanged']; entityAccount.preBattlePlayerSimple.shipId"/>
+			<bind name="watchDH" value="'teamId'; ['entityAccount.preBattlePlayerSimple.evTeamIdChanged']; entityAccount.preBattlePlayerSimple.teamId"/>
+			<bind name="watchDH" value="'isReady'; ['entityAccount.preBattlePlayerSimple.evIsReadyChanged']; entityAccount.preBattlePlayerSimple.isReady"/>
+			<bind name="watchDH" value="'isInBattle'; ['entityAccount.accountStatus.evInBattleChanged']; entityAccount.accountStatus.inBattle"/>
+			<bind name="watchDH" value="'isCommander'; ['entityAccount.preBattlePlayerSimple.evIsCommanderChanged']; entityAccount.preBattlePlayerSimple.isCommander"/>
+			<bind name="watchDH" value="'isMercenary'; ['entityAccount.preBattlePlayerSimple.evIsMercenaryChanged']; entityAccount.preBattlePlayerSimple.isMercenary"/>
+			<bind name="watchDH" value="'nickName'; ['entityAccount.accountName.evChanged']; entityAccount.accountName.nickName"/>
+			<bind name="watchDH" value="'pureName'; ['entityAccount.accountName.evChanged']; entityAccount.accountName.name"/>
+			<bind name="firstEntityDH" value="'selfPlayerEntity'; CC.accountSelf"/>
+			<bind name="watchDH" value="'isSelfPlayerCommander'; ['selfPlayerEntity.preBattlePlayerSimple.evIsCommanderChanged']; selfPlayerEntity.preBattlePlayerSimple.isCommander"/>
+			<bind name="watchDH" value="' isSelfPreBattlePlayerSimpleInBattle'; ['selfPlayerEntity.preBattlePlayerSimple.evIsInBattleChanged']; selfPlayerEntity.preBattlePlayerSimple.isInBattle"/>
+			<bind name="watchDH" value="'selfTeamId'; ['selfPlayerEntity.preBattlePlayerSimple.evTeamIdChanged']; selfPlayerEntity.preBattlePlayerSimple.teamId"/>
+			<bind name="watch" value="'isContextMenuAvailable'; !isSelfPlayer &amp;&amp; ((isSelfPlayerCommander &amp;&amp; ! isSelfPreBattlePlayerSimpleInBattle) || isChatServerAvailable)"/>
+			<bind name="var" value="{isAnimationPreUnlocked: false,
+				isAnimationUnlocked: 	false}"/>
+			<bind name="dispatch" value="'addedToStage'; 'animationPreActivationEvent'; null; false; 0.1"/>
+			<bind name="catch" value="'animationPreActivationEvent'; {isAnimationPreUnlocked: true}"/>
+			<bind name="changeDispatch" value="isReady; 'animationActivationEvent'"/>
+			<bind name="catch" value="'animationActivationEvent'; {isAnimationUnlocked: isAnimationPreUnlocked ? true : false}"/>
+			<bind name="entityDH" value="'channelEntity'; _channelEntityId"/>
+			<bind name="var" value="{canReportPortChatMisbehaviour : false}"/>
+			<!--mod-->
+			<bind name="var" value="{previousShipWeight: 0, currentShipWeight: 0, previousTeamId: teamId}"/>
+			<bind name="file" value="'loadedString'; '../unbound/mods/TournamentShipWeightViewer.data'"/>
+			<bind name="watch" value="'shipWeightsData'; strSplit(loadedString, ',')"/>
+			<bind name="watch" value="'shipWeightIndex'; indexOf(str(shipId), shipWeightsData) + 1"/>
+			<bind name="watch" value="'currentShipWeight'; shipWeightIndex &gt; 0 ? Number(shipWeightsData[shipWeightIndex]) : 0"/>
+			<bind name="changeDispatch" value="currentShipWeight; 'evShipWeightChanged'; {}"/>
+			<bind name="changeDispatch" value="teamId;            'evShipWeightChanged'; {}"/>
+			<bind name="dispatch" value="'evRecalcAllTeamShipWeights'; 'evSendShipWeights'; {currentShipWeight: currentShipWeight &gt; 0 ? currentShipWeight : 0}"/>
+			<!--mod-->
+			<style>
+				<width value="100%"/>
+				<height value="27px"/>
+				<flow value="horizontal"/>
+			</style>
+			<block className="inner_panel" type="native">
+				<bind name="visible" value="isSelfPlayer"/>
+				<style>
+					<hitTest value="false"/>
+				</style>
+				<styleClass value="$FullsizeAbsolute"/>
+			</block>
+			<block className="dock_submenu_item_bg" type="native">
+				<styleClass value="$FullsizeAbsolute"/>
+				<styleClass value="$PxHorizontalCorrection"/>
+				<bind name="clickSplit"/>
+				<bind name="style" value="'hitTest'; !(isSuspended)"/>
+				<bind name="transition" value="(rollOver || _rollOver || formationPlayerContextMenuVisible) &amp;&amp; isContextMenuAvailable; 0.15; {alpha: 0}; {alpha: 1}"/>
+				<bind name="tooltip" value="'ContactInfoTooltip';	{	_entityAccountId: entityAccount.id, 
+													_actionDenyReason: 'no_reason',
+													_isChatServerAvailable: isChatServerAvailable,
+													_isContextMenuAvailable: isContextMenuAvailable,
+													_playerContext: {type: 'startPrivateChat'}}"/>
+				<bind name="action" value="'left_click';	!(isSelfPlayer) &amp;&amp; !(isBot) ? 'openChannelForPrivateMessages' : null; {dbId: entityAccount.accountSimple.dbId}"/>
+				<bind name="menu" value="'ContactContextMenu';	!(isSelfPlayer)	? 	{	
+																	_entityAccountId: entityAccount.id, 
+																	_playerContext: {type: 'startPrivateChat'},
+																	_inviteType: SC.Pre_battle.PRE_BATTLE_INVITE_TYPE.COMMON, 
+																	_isTrainingRoom: _isTrainingRoom, 
+																	_isBot: isBot,
+																	_channelId: canReportPortChatMisbehaviour ? channelEntity.channel.channelId : null
+																}
+															: null; 
+											 null; null; 'formationPlayerContextMenuVisible'"/>
+			</block>
+			<block>
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<hitTest value="false"/>
+				</style>
+				<block>
+					<styleClass value="$FullsizeAbsolute"/>
+					<bind name="fade" value="(!isReady || isInBattle) &amp;&amp; isAnimationUnlocked; 0.3; {alpha: 0}; {alpha: 1}; {alpha: 0}; 1; 0"/>
+					<block>
+						<styleClass value="$Fullsize"/>
+						<style>
+							<backgroundColor value="0x90FF9933"/>
+						</style>
+						<bind name="fade" value="(!isReady || isInBattle) &amp;&amp; isAnimationUnlocked; 1.0; {alpha: 1}; {alpha: 0}; {alpha: 1}; 1; 0.5"/>
+					</block>
+				</block>
+				<block>
+					<styleClass value="$FullsizeAbsolute"/>
+					<bind name="fade" value="isReady &amp;&amp; isAnimationUnlocked; 0.3; {alpha: 0}; {alpha: 1}; {alpha: 0}; 1; 0"/>
+					<block>
+						<styleClass value="$Fullsize"/>
+						<style>
+							<backgroundColor value="0x804CE8AA"/>
+						</style>
+						<bind name="fade" value="isReady &amp;&amp; isAnimationUnlocked; 1.0; {alpha: 1}; {alpha: 0}; {alpha: 1}; 1; 0.5"/>
+					</block>
+				</block>
+			</block>
+			<block>
+				<bind name="name" value="'participantDivisionPlayer_' + nickName"/>
+				<styleClass value="$Fullsize"/>
+				<style>
+					<hitTest value="false"/>
+					<marginLeft value="13px"/>
+					<marginRight value="6px"/>
+				</style>
+				<block>
+					<style>
+						<position value="absolute"/>
+						<marginLeft value="-12px"/>
+					</style>
+					<styleClass value="$MiddleVAligned"/>
+					<bind name="instance" value="'VoiceChatDockIcon'; { _playerName: pureName, _isSelf: isSelfPlayer}"/>
+				</block>
+				<block>
+					<bind name="name" value="'participantDivisionPlayer_' + teamId + '_' + nickName"/>
+					<styleClass value="$MiddleVAligned"/>
+					<bind name="instance" value="'DHFormationPlayerIcon'; teamId != SC.Common.TRAINING_ROOM_TEAMS_IDS.NEUTRAL_TEAM ? {_entityAccountId: entityAccount.id, _isOtherDivision: selfTeamId != teamId, _isTrainingRoom: _isTrainingRoom} : null"/>
+				</block>
+				<block type="text">
+					<styleClass value="$MiddleVAligned"/>
+					<style>
+						<marginLeft value="1px"/>
+						<width value="47%"/>
+						<multiline value="false"/>
+						<noTranslate value="true"/>
+					</style>
+					<styleClass value="$TextDefault"/>
+					<bind name="class" value="	tkStatus																	? '$FontColorTeamkiller' :
+							teamId == SC.Common.TRAINING_ROOM_TEAMS_IDS.NEUTRAL_TEAM &amp;&amp; !isSelfPlayer	? '$FontColorGrey' :
+							selfTeamId == teamId &amp;&amp; !isMercenary										? '$FontColorGolden'
+																										: '$FontColorWhite'"/>
+					<bind name="class" value="isSelfPlayer ? '$Bold' : '$None'"/>
+					<bind name="text" value="nickName"/>
+				</block>
+				<block>
+					<bind name="visible" value="shipId"/>
+					<styleClass value="$MiddleVAligned"/>
+					<style>
+						<!--mod-->
+						<width value="43%"/>
+						<!--mod-->
+					</style>
+					<bind name="instance" value="'PreBattlePlayerShip'; (isReady || isInBattle) ? {_shipId: shipId} : null"/>
+				</block>
+				<!--mod-->
+				<block type="text">
+					<styleClass value="$MiddleVAligned"/>
+					<styleClass value="$TextDefault"/>
+					<style>
+						<width value="10%"/>
+						<textAlign value="right"/>
+					</style>
+					<bind name="text" value="shipId ? currentShipWeight &gt; 0 ? currentShipWeight
+																				: '--'
+													: ''"/>
+				</block>
+				<!--mod-->
+				<style>
+					<flow value="horizontal"/>
+				</style>
+			</block>
+		</block>
+	</block>
+		
+</ui>
