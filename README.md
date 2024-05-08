@@ -3,6 +3,7 @@ This modification displays the total and individual weight of ships in the train
 
 # Overview
 The total weight of a team is displayed at the top.
+
 ![image](https://github.com/AndrewTaro/TournamentShipWeightViewer/assets/36262823/bc96dbec-daa3-4b82-9306-52646d41da2f)
 
 # Install
